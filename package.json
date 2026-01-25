@@ -1,0 +1,27 @@
+{
+  "name": "dori-bell-serverless",
+  "version": "1.0.0",
+  "description": "🛎️ The $0 Smart Doorbell. Serverless, secure, and notifies you on Telegram. Runs on Cloudflare Workers.",
+  "main": "worker.js",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "serverless",
+    "smart-home",
+    "iot",
+    "diy",
+    "telegram-bot",
+    "javascript",
+    "turnstile",
+    "wolt",
+    "doorbell"
+  ],
+  "author": "Aviel.AI",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
