@@ -25,7 +25,7 @@ In the age of smart homes, I realized my physical doorbell was a single point of
 | :--- | :--- | :--- |
 | 🚀 | **Serverless & $0 Cost** | Runs entirely on Cloudflare Workers, leveraging the free tier for virtually unlimited rings. No servers to maintain, no monthly fees. |
 | 🛡️ | **Bot Protection** | Integrated with **Cloudflare Turnstile** to ensure only humans (or very smart bots) can ring the bell. |
-| 🎨 | **Customizable Buttons** | Define any number of buttons (e.g., Delivery, Guest, Urgent) with custom labels, icons, and Telegram messages via a simple configuration object. |
+| 🎨 | **Customizable Buttons** | Define any number of buttons (e.g., **Delivery**, **Guest**, **Urgent**) with custom labels, icons, and Telegram messages via a simple configuration object. The examples are fully customizable. |
 | 🌙 | **Quiet Hours** | "Dori" sleeps at night. Configure a time range where notifications are automatically suppressed. |
 | 📱 | **Telegram Integration** | Instant, rich push notifications sent directly to your Telegram chat via the Bot API. |
 
@@ -109,9 +109,9 @@ const CONFIG = {
   buttons: [
     {
       id: "delivery", // Unique ID for the button
-      label: "Wolt / Delivery", // Text displayed on the button
+      label: "Delivery (Example: Wolt)", // Text displayed on the button
       icon: "🛵", // Emoji, SVG string, or Image URL
-      message: "🛵 *Delivery Alert!* Go get the food." // Telegram message (supports Markdown)
+      message: "🛵 *Delivery Alert!* Go get the food." // Telegram message (supports Markdown) - This is a customizable example.
     },
     // Add more buttons here!
   ],
