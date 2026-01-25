@@ -13,7 +13,7 @@
 
 ## 🤯 Why does this exist?
 
-In the age of smart homes, I realized my physical doorbell was a single point of failure—a dumb, noisy box that couldn't tell the difference between a delivery driver and a persistent salesman. I needed a solution that was smarter, quieter, and, most importantly, free.
+In the age of smart homes, I realized my physical doorbell was a single point of failure-a dumb, noisy box that couldn't tell the difference between a delivery driver and a persistent salesman. I needed a solution that was smarter, quieter, and, most importantly, free.
 
 **Dori-Bell** is the result: an over-engineered, 100% serverless, QR-code-activated smart doorbell that runs entirely on Cloudflare Workers. It's the perfect blend of modern cloud architecture and delightful DIY absurdity.
 
