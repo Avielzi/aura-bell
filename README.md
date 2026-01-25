@@ -6,7 +6,7 @@
 [![Powered by Cloudflare](https://img.shields.io/badge/Cloudflare-Workers-orange.svg?logo=cloudflare)](https://workers.cloudflare.com/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/your-username/dori-bell-serverless/pulls)
 
-<!-- Placeholder for Project Logo/Image -->
+
 <p align="center">
   <img src="assets/logo.png" alt="Dori-Bell Logo" width="600" />
 </p>
@@ -29,7 +29,7 @@ In the age of smart homes, I realized my physical doorbell was a single point of
 | 🌙 | **Quiet Hours** | "Dori" sleeps at night. Configure a time range where notifications are automatically suppressed. |
 | 📱 | **Telegram Integration** | Instant, rich push notifications sent directly to your Telegram chat via the Bot API. |
 
-## 🖼️ Demo & Screenshots (Placeholders)
+## 🖼️ Demo & Screenshots
 
 | Main Screen (Mobile View) | Telegram Notification |
 | :---: | :---: |
@@ -113,7 +113,7 @@ const CONFIG = {
       icon: "🛵", // Emoji, SVG string, or Image URL
       message: "🛵 *Delivery Alert!* Go get the food." // Telegram message (supports Markdown) - This is a customizable example.
     },
-    // Add more buttons here!
+    
   ],
   // ...
 };
