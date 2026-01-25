@@ -17,7 +17,7 @@ In the age of smart homes, I realized my physical doorbell was a single point of
 
 **Dori-Bell** is the result: an over-engineered, 100% serverless, QR-code-activated smart doorbell that runs entirely on Cloudflare Workers. It's the perfect blend of modern cloud architecture and delightful DIY absurdity.
 
-> **Quote:** "My wife called it 'Smart and useless at the same time'. I call it Innovation. (Credit: Aviel.AI)"
+
 
 ## ✨ Features
 
