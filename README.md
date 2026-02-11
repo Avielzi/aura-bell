@@ -1,52 +1,72 @@
-# 🔔 Aura Bell: The Professional Smart Doorbell
+# 🔔 Aura Bell v2.0: The Professional Smart Doorbell
 
-> **Description:** Aura Bell is a serverless, secure, and multi-lingual smart doorbell system. Notifies you on Telegram and allows direct calls. Runs on Cloudflare Workers for $0 cost.
+> **Aura Bell** is a serverless, multi-lingual, and secure smart doorbell system. It provides instant Telegram notifications, direct calling capabilities, and a sleek modern interface—all running for $0 on Cloudflare Workers.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Powered by Cloudflare](https://img.shields.io/badge/Cloudflare-Workers-orange.svg?logo=cloudflare)](https://workers.cloudflare.com/)
+---
 
-**English** | [עברית](./README.he.md)
+## 🌍 Multi-lingual Support
+Aura Bell is designed for a global audience with full support for:
+- 🇮🇱 **Hebrew** (עברית)
+- 🇺🇸 **English**
+- 🇸🇦 **Arabic** (العربية)
+- 🇷🇺 **Russian** (Русский)
+- 🇫🇷 **French** (Français)
 
-<p align="center">
-  <img src="assets/logo.png" alt="Aura Bell Logo" width="600" />
-</p>
+---
 
-## ✨ New in Version 2.0 (Aura Bell)
-
+## ✨ New in Version 2.0
 | Feature | Description |
 | :--- | :--- |
-| 🌍 **Multi-lingual** | Full support for **5 languages**: English, Hebrew, Arabic, Russian, and French. |
-| 📞 **Direct Call** | Guests can call you directly from the interface with a single tap. |
-| 🚀 **Setup Wizard** | New `/setup` interface for easy initial configuration. |
-| 🎨 **Modern UI** | Sleek, professional dark-mode interface with smooth animations. |
+| 📞 **Direct Call** | Guests can call the host directly from the browser with one tap. |
+| 🚀 **Auto-Setup Script** | New `setup.py` script to configure everything without touching code. |
+| 🌍 **RTL/LTR Support** | Seamless switching between Right-to-Left and Left-to-Right languages. |
+| 🎨 **Premium UI** | Modern dark-mode design with smooth animations and a professional look. |
+| 🛡️ **Bot Protection** | Powered by Cloudflare Turnstile for maximum security. |
 
-## 🤯 Why Aura Bell?
+---
 
-In the age of smart homes, physical doorbells are often noisy and limited. **Aura Bell** provides a professional, serverless solution that is smarter, quieter, and entirely free to run. It's the perfect blend of modern cloud architecture and user-centric design.
+## 🚀 Quick Installation (Choose your path)
 
-## 🚀 Quick Start
+### Option A: The Easy Way (For Everyone)
+1. **Download** the project files.
+2. **Run Setup:** Open your terminal and run:
+   ```bash
+   python3 setup.py
+   ```
+   *The script will guide you through the configuration step-by-step.*
+3. **Deploy:** Run `wrangler deploy` or copy the content of `worker.js` to a new Cloudflare Worker.
 
-1.  **Clone & Deploy:**
-    ```bash
-    git clone https://github.com/Avielzi/dori-bell-serverless-template.git aura-bell
-    cd aura-bell
-    wrangler deploy
-    ```
-2.  **Configure:** Visit `your-worker-url.workers.dev/setup` to see the configuration guide.
-3.  **Environment Variables:** Set your `TG_BOT_TOKEN`, `TG_CHAT_ID`, and `PHONE_NUMBER` in the Cloudflare Dashboard.
+### Option B: The Developer Way
+1. **Clone & Install:**
+   ```bash
+   git clone https://github.com/Avielzi/dori-bell-serverless-template.git aura-bell
+   cd aura-bell
+   npm install -g wrangler
+   ```
+2. **Configure:** Edit `wrangler.toml` or set environment variables in the Cloudflare Dashboard.
+3. **Deploy:** `wrangler deploy`
 
-## ⚙️ Configuration
+---
 
-| Variable | Description | Example |
-| :--- | :--- | :--- |
-| `TG_BOT_TOKEN` | Telegram Bot API token | `12345:ABC...` |
-| `TG_CHAT_ID` | Your Telegram Chat ID | `-100...` |
-| `PHONE_NUMBER` | Your phone number for direct calls | `+97250...` |
-| `FAMILY_NAME` | Displayed name | `Aura Bell Home` |
+## ⚙️ Configuration Variables
+| Variable | Description |
+| :--- | :--- |
+| `TG_BOT_TOKEN` | Your Telegram Bot API token. |
+| `TG_CHAT_ID` | Your Telegram Chat ID. |
+| `PHONE_NUMBER` | Your phone number for direct calls. |
+| `FAMILY_NAME` | The name displayed on the screen. |
+| `TURNSTILE_SITE_KEY` | Cloudflare Turnstile Site Key. |
 
-## 🎨 Customization
+---
 
-The system is controlled by a single `translations` and `CONFIG` object in `worker.js`. You can easily add more languages or change button icons.
+## 🖼️ UI Preview
+*Aura Bell features a responsive, mobile-first design that adapts to any screen size and language preference.*
+
+---
+
+## 📄 Documentation
+- [Hebrew Guide / מדריך בעברית](./README.he.md)
+- [Roby's Simple Guide / המדריך של רובי](./GUIDE_FOR_ROBY.md)
 
 ---
 *Aura Bell - Elevating your home entrance experience.*
