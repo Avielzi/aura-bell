@@ -1,4 +1,4 @@
-name = "aura-bell"
+name = "dori-bell"
 main = "worker.js"
 compatibility_date = "2024-01-01"
 
@@ -12,7 +12,7 @@ TURNSTILE_SITE_KEY = ""
 TURNSTILE_SECRET = ""
 
 # Logic Configuration
-FAMILY_NAME = "Aura Bell Home"
+FAMILY_NAME = "Dori-Bell Home"
 PHONE_NUMBER = "" # Added for direct calling feature
 TIMEZONE_OFFSET = "2" # e.g., +2 for Israel
 QUIET_HOURS_START = "22" # 10 PM

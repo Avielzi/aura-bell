@@ -1,6 +1,6 @@
-# 📖 מדריך למשתמש - Aura Bell v2.0
+# 📖 מדריך למשתמש - Dori-Bell v2.0
 
-ברוכים הבאים ל-**Aura Bell**, הגרסה המקצועית והמשודרגת של פעמון הדלת החכם מבוסס ה-Serverless.
+ברוכים הבאים ל-**Dori-Bell**, הגרסה המקצועית והמשודרגת של פעמון הדלת החכם מבוסס ה-Serverless.
 
 ## 🌟 מה חדש בגרסה 2.0?
 - **מיתוג מקצועי:** שם חדש, לוגו מודרני וממשק משתמש יוקרתי.
@@ -44,4 +44,4 @@ python3 setup.py
 לאחר הפריסה, תוכלו לגשת לכתובת ה-Worker שלכם ולהוסיף `/setup` בסוף כדי לראות את המדריך הגרפי.
 
 ---
-**Aura Bell - Elevating your home entrance experience.**
+**Dori-Bell - Elevating your home entrance experience.**

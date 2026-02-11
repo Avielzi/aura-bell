@@ -7,12 +7,12 @@ def clear_screen():
 def main():
     clear_screen()
     print("="*50)
-    print("🚀 Aura Bell v2.0 - Easy Setup Script")
+    print("🚀 Dori-Bell v2.0 - Easy Setup Script")
     print("="*50)
-    print("\nThis script will help you configure your Aura Bell smart doorbell.\n")
+    print("\nThis script will help you configure your Dori-Bell smart doorbell.\n")
 
     # Collect Data
-    family_name = input("🏠 Enter Family Name (e.g., Cohen Family): ") or "Aura Bell Home"
+    family_name = input("🏠 Enter Family Name (e.g., Cohen Family): ") or "Dori-Bell Home"
     tg_token = input("🤖 Enter Telegram Bot Token: ")
     tg_chat_id = input("💬 Enter Telegram Chat ID: ")
     phone_number = input("📞 Enter Phone Number (e.g., +972501234567): ")

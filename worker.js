@@ -1,11 +1,11 @@
 /**
- * Aura Bell: The Professional Smart Doorbell
+ * Dori-Bell: The Professional Smart Doorbell
  * Serverless, secure, and multi-lingual.
  */
 
 const translations = {
   en: {
-    title: "Aura Bell",
+    title: "Dori-Bell",
     subtitle: "Smart Access System",
     securityCheck: "Please solve the security check to ring the doorbell.",
     ringing: "Ringing the bell...",
@@ -13,7 +13,7 @@ const translations = {
     error: "Error: ",
     connFailed: "Connection failed.",
     callHost: "Call Host",
-    setupTitle: "Aura Bell Setup",
+    setupTitle: "Dori-Bell Setup",
     familyName: "Family Name",
     tgToken: "Telegram Bot Token",
     tgChatId: "Telegram Chat ID",
@@ -26,7 +26,7 @@ const translations = {
     urgentMsg: "🚨 *URGENT!* Someone needs immediate attention at the door."
   },
   he: {
-    title: "Aura Bell",
+    title: "Dori-Bell",
     subtitle: "מערכת גישה חכמה",
     securityCheck: "אנא עברו את בדיקת האבטחה כדי לצלצל בפעמון.",
     ringing: "מצלצל בפעמון...",
@@ -34,7 +34,7 @@ const translations = {
     error: "שגיאה: ",
     connFailed: "התחברות נכשלה.",
     callHost: "התקשר למארח",
-    setupTitle: "הגדרת Aura Bell",
+    setupTitle: "הגדרת Dori-Bell",
     familyName: "שם המשפחה",
     tgToken: "טוקן בוט טלגרם",
     tgChatId: "מזהה צ'אט טלגרם",
@@ -47,7 +47,7 @@ const translations = {
     urgentMsg: "🚨 *דחוף!* מישהו זקוק לתשומת לב מיידית בדלת."
   },
   ar: {
-    title: "Aura Bell",
+    title: "Dori-Bell",
     subtitle: "نظام الوصول الذكي",
     securityCheck: "يرجى حل التحقق الأمني لقرع الجرس.",
     ringing: "يرن الجرس...",
@@ -55,7 +55,7 @@ const translations = {
     error: "خطأ: ",
     connFailed: "فشل الاتصال.",
     callHost: "اتصل بالمضيف",
-    setupTitle: "إعداد Aura Bell",
+    setupTitle: "إعداد Dori-Bell",
     familyName: "اسم العائلة",
     tgToken: "رمز بوت تلغرام",
     tgChatId: "معرف دردشة تلغرام",
@@ -68,7 +68,7 @@ const translations = {
     urgentMsg: "🚨 *עاجל!* شخص ما يحتاج إلى اهتمام فوري عند الباب."
   },
   ru: {
-    title: "Aura Bell",
+    title: "Dori-Bell",
     subtitle: "Умная система доступа",
     securityCheck: "Пожалуйста, пройдите проверку безопасности, чтобы позвонить в звонок.",
     ringing: "Звоним в звонок...",
@@ -76,7 +76,7 @@ const translations = {
     error: "Ошибка: ",
     connFailed: "Ошибка подключения.",
     callHost: "Позвонить хозяину",
-    setupTitle: "Настройка Aura Bell",
+    setupTitle: "Настройка Dori-Bell",
     familyName: "Фамилия",
     tgToken: "Токен бота Telegram",
     tgChatId: "ID чата Telegram",
@@ -89,7 +89,7 @@ const translations = {
     urgentMsg: "🚨 *СРОЧНО!* Кому-то требуется немедленное внимание у двери."
   },
   fr: {
-    title: "Aura Bell",
+    title: "Dori-Bell",
     subtitle: "Système d'Accès Intelligent",
     securityCheck: "Veuillez résoudre le contrôle de sécurité pour sonner.",
     ringing: "Appel en cours...",
@@ -97,7 +97,7 @@ const translations = {
     error: "Erreur : ",
     connFailed: "Échec de la connexion.",
     callHost: "Appeler l'hôte",
-    setupTitle: "Configuration Aura Bell",
+    setupTitle: "Configuration Dori-Bell",
     familyName: "Nom de famille",
     tgToken: "Jeton du bot Telegram",
     tgChatId: "ID du chat Telegram",
@@ -121,7 +121,7 @@ export default {
     }
 
     const CONFIG = {
-      familyName: env.FAMILY_NAME || "Aura Bell Home",
+      familyName: env.FAMILY_NAME || "Dori-Bell Home",
       phone: env.PHONE_NUMBER || "", // Added for direct call
       buttons: [
         { id: "delivery", icon: "🛵" },
@@ -206,7 +206,7 @@ function serveFrontend(env, CONFIG) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${CONFIG.familyName} | Aura Bell</title>
+    <title>${CONFIG.familyName} | Dori-Bell</title>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         :root {
@@ -277,7 +277,7 @@ function serveFrontend(env, CONFIG) {
 <body>
     <div class="container">
         <div class="logo">🔔</div>
-        <h1 id="ui-title">Aura Bell</h1>
+        <h1 id="ui-title">Dori-Bell</h1>
         <div class="subtitle" id="ui-subtitle">Smart Access System</div>
         
         <div class="lang-selector">
@@ -309,7 +309,7 @@ function serveFrontend(env, CONFIG) {
         </div>
         
         <div id="status"></div>
-        <div class="footer">AURA BELL &copy; 2026</div>
+        <div class="footer">DORI-BELL &copy; 2026</div>
     </div>
 
     <script>
@@ -379,7 +379,7 @@ function serveSetup(env) {
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Aura Bell Setup</title>
+        <title>Dori-Bell Setup</title>
         <style>
             body { font-family: sans-serif; background: #0f172a; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; }
             .card { background: #1e293b; padding: 2rem; border-radius: 1rem; width: 100%; max-width: 400px; }
@@ -389,7 +389,7 @@ function serveSetup(env) {
     </head>
     <body>
         <div class="card">
-            <h2>🚀 Aura Bell Setup</h2>
+            <h2>🚀 Dori-Bell Setup</h2>
             <p>Enter your environment variables below:</p>
             <input type="text" placeholder="Family Name (e.g. Cohen Family)" id="name">
             <input type="text" placeholder="Telegram Bot Token" id="token">

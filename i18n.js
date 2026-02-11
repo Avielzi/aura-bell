@@ -1,6 +1,6 @@
 const translations = {
   en: {
-    title: "Aura Bell",
+    title: "Dori-Bell",
     subtitle: "Smart Access System",
     securityCheck: "Please solve the security check to ring the doorbell.",
     ringing: "Ringing the bell...",
@@ -8,7 +8,7 @@ const translations = {
     error: "Error: ",
     connFailed: "Connection failed.",
     callHost: "Call Host",
-    setupTitle: "Aura Bell Setup",
+    setupTitle: "Dori-Bell Setup",
     familyName: "Family Name",
     tgToken: "Telegram Bot Token",
     tgChatId: "Telegram Chat ID",
@@ -21,7 +21,7 @@ const translations = {
     urgentMsg: "🚨 *URGENT!* Someone needs immediate attention at the door."
   },
   he: {
-    title: "Aura Bell",
+    title: "Dori-Bell",
     subtitle: "מערכת גישה חכמה",
     securityCheck: "אנא עברו את בדיקת האבטחה כדי לצלצל בפעמון.",
     ringing: "מצלצל בפעמון...",
@@ -29,7 +29,7 @@ const translations = {
     error: "שגיאה: ",
     connFailed: "התחברות נכשלה.",
     callHost: "התקשר למארח",
-    setupTitle: "הגדרת Aura Bell",
+    setupTitle: "הגדרת Dori-Bell",
     familyName: "שם המשפחה",
     tgToken: "טוקן בוט טלגרם",
     tgChatId: "מזהה צ'אט טלגרם",
@@ -42,7 +42,7 @@ const translations = {
     urgentMsg: "🚨 *דחוף!* מישהו זקוק לתשומת לב מיידית בדלת."
   },
   ar: {
-    title: "Aura Bell",
+    title: "Dori-Bell",
     subtitle: "نظام الوصول الذكي",
     securityCheck: "يرجى حل التحقق الأمني لقرع الجرس.",
     ringing: "يرن الجرس...",
@@ -50,7 +50,7 @@ const translations = {
     error: "خطأ: ",
     connFailed: "فشل الاتصال.",
     callHost: "اتصل بالمضيف",
-    setupTitle: "إعداد Aura Bell",
+    setupTitle: "إعداد Dori-Bell",
     familyName: "اسم العائلة",
     tgToken: "رمز بوت تلغرام",
     tgChatId: "معرف دردشة تلغرام",
@@ -63,7 +63,7 @@ const translations = {
     urgentMsg: "🚨 *عاجל!* شخص ما يحتاج إلى اهتمام فوري عند الباب."
   },
   ru: {
-    title: "Aura Bell",
+    title: "Dori-Bell",
     subtitle: "Умная система доступа",
     securityCheck: "Пожалуйста, пройдите проверку безопасности, чтобы позвонить в звонок.",
     ringing: "Звоним в звонок...",
@@ -71,7 +71,7 @@ const translations = {
     error: "Ошибка: ",
     connFailed: "Ошибка подключения.",
     callHost: "Позвонить хозяину",
-    setupTitle: "Настройка Aura Bell",
+    setupTitle: "Настройка Dori-Bell",
     familyName: "Фамилия",
     tgToken: "Токен бота Telegram",
     tgChatId: "ID чата Telegram",
@@ -84,7 +84,7 @@ const translations = {
     urgentMsg: "🚨 *СРОЧНО!* Кому-то требуется немедленное внимание у двери."
   },
   fr: {
-    title: "Aura Bell",
+    title: "Dori-Bell",
     subtitle: "Système d'Accès Intelligent",
     securityCheck: "Veuillez résoudre le contrôle de sécurité pour sonner.",
     ringing: "Appel en cours...",
@@ -92,7 +92,7 @@ const translations = {
     error: "Erreur : ",
     connFailed: "Échec de la connexion.",
     callHost: "Appeler l'hôte",
-    setupTitle: "Configuration Aura Bell",
+    setupTitle: "Configuration Dori-Bell",
     familyName: "Nom de famille",
     tgToken: "Jeton du bot Telegram",
     tgChatId: "ID du chat Telegram",
