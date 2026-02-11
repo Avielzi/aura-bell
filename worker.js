@@ -1,32 +1,132 @@
 /**
- * Dori-Bell: The $0 Smart Doorbell (Template Version)
- * Serverless, secure, and fully customizable.
+ * Aura Bell: The Professional Smart Doorbell
+ * Serverless, secure, and multi-lingual.
  */
+
+const translations = {
+  en: {
+    title: "Aura Bell",
+    subtitle: "Smart Access System",
+    securityCheck: "Please solve the security check to ring the doorbell.",
+    ringing: "Ringing the bell...",
+    notified: "Host notified! Please wait.",
+    error: "Error: ",
+    connFailed: "Connection failed.",
+    callHost: "Call Host",
+    setupTitle: "Aura Bell Setup",
+    familyName: "Family Name",
+    tgToken: "Telegram Bot Token",
+    tgChatId: "Telegram Chat ID",
+    save: "Save Configuration",
+    delivery: "Delivery",
+    guest: "Guest",
+    urgent: "Urgent",
+    deliveryMsg: "🛵 *Delivery Alert!* Food or package at the door.",
+    guestMsg: "🔔 *Ding Dong!* A guest is waiting for you.",
+    urgentMsg: "🚨 *URGENT!* Someone needs immediate attention at the door."
+  },
+  he: {
+    title: "Aura Bell",
+    subtitle: "מערכת גישה חכמה",
+    securityCheck: "אנא עברו את בדיקת האבטחה כדי לצלצל בפעמון.",
+    ringing: "מצלצל בפעמון...",
+    notified: "המארח קיבל הודעה! נא להמתין.",
+    error: "שגיאה: ",
+    connFailed: "התחברות נכשלה.",
+    callHost: "התקשר למארח",
+    setupTitle: "הגדרת Aura Bell",
+    familyName: "שם המשפחה",
+    tgToken: "טוקן בוט טלגרם",
+    tgChatId: "מזהה צ'אט טלגרם",
+    save: "שמור הגדרות",
+    delivery: "משלוח",
+    guest: "אורח",
+    urgent: "דחוף",
+    deliveryMsg: "🛵 *התראת משלוח!* אוכל או חבילה בדלת.",
+    guestMsg: "🔔 *דינג דונג!* אורח ממתין לך.",
+    urgentMsg: "🚨 *דחוף!* מישהו זקוק לתשומת לב מיידית בדלת."
+  },
+  ar: {
+    title: "Aura Bell",
+    subtitle: "نظام الوصول الذكي",
+    securityCheck: "يرجى حل التحقق الأمني لقرع الجرس.",
+    ringing: "يرن الجرس...",
+    notified: "تم إخطار المضيف! يرجى الانتظار.",
+    error: "خطأ: ",
+    connFailed: "فشل الاتصال.",
+    callHost: "اتصل بالمضيف",
+    setupTitle: "إعداد Aura Bell",
+    familyName: "اسم العائلة",
+    tgToken: "رمز بوت تلغرام",
+    tgChatId: "معرف دردشة تلغرام",
+    save: "حفظ الإعدادات",
+    delivery: "توصيل",
+    guest: "ضيف",
+    urgent: "عاجل",
+    deliveryMsg: "🛵 *تنبيه توصيل!* طعام أو طرد عند الباب.",
+    guestMsg: "🔔 *دينغ دونغ!* ضيف ينتظرك.",
+    urgentMsg: "🚨 *עاجל!* شخص ما يحتاج إلى اهتمام فوري عند الباب."
+  },
+  ru: {
+    title: "Aura Bell",
+    subtitle: "Умная система доступа",
+    securityCheck: "Пожалуйста, пройдите проверку безопасности, чтобы позвонить в звонок.",
+    ringing: "Звоним в звонок...",
+    notified: "Хозяин уведомлен! Пожалуйста, подождите.",
+    error: "Ошибка: ",
+    connFailed: "Ошибка подключения.",
+    callHost: "Позвонить хозяину",
+    setupTitle: "Настройка Aura Bell",
+    familyName: "Фамилия",
+    tgToken: "Токен бота Telegram",
+    tgChatId: "ID чата Telegram",
+    save: "Сохранить настройки",
+    delivery: "Доставка",
+    guest: "Гость",
+    urgent: "Срочно",
+    deliveryMsg: "🛵 *Оповещение о доставке!* Еда или посылка у двери.",
+    guestMsg: "🔔 *Динь-дон!* Вас ждет гость.",
+    urgentMsg: "🚨 *СРОЧНО!* Кому-то требуется немедленное внимание у двери."
+  },
+  fr: {
+    title: "Aura Bell",
+    subtitle: "Système d'Accès Intelligent",
+    securityCheck: "Veuillez résoudre le contrôle de sécurité pour sonner.",
+    ringing: "Appel en cours...",
+    notified: "Hôte prévenu ! Veuillez patienter.",
+    error: "Erreur : ",
+    connFailed: "Échec de la connexion.",
+    callHost: "Appeler l'hôte",
+    setupTitle: "Configuration Aura Bell",
+    familyName: "Nom de famille",
+    tgToken: "Jeton du bot Telegram",
+    tgChatId: "ID du chat Telegram",
+    save: "Enregistrer la configuration",
+    delivery: "Livraison",
+    guest: "Invité",
+    urgent: "Urgent",
+    deliveryMsg: "🛵 *Alerte Livraison !* Nourriture ou colis à la porte.",
+    guestMsg: "🔔 *Ding Dong !* Un invité vous attend.",
+    urgentMsg: "🚨 *URGENT !* Quelqu'un a besoin d'une attention immédiate à la porte."
+  }
+};
 
 export default {
   async fetch(request, env, ctx) {
-    // --- USER CONFIGURATION ---
+    const url = new URL(request.url);
+
+    // Handle Setup/Config (Simplified for Template - usually uses KV or D1)
+    if (url.pathname === "/setup") {
+        return serveSetup(env);
+    }
+
     const CONFIG = {
-      familyName: env.FAMILY_NAME || "The Innovation Lab",
+      familyName: env.FAMILY_NAME || "Aura Bell Home",
+      phone: env.PHONE_NUMBER || "", // Added for direct call
       buttons: [
-        {
-          id: "delivery",
-          label: "Wolt / Delivery",
-          icon: "🛵", // Can be Emoji, SVG string, or Image URL
-          message: "🛵 *Delivery Alert!* Food or package at the door."
-        },
-        {
-          id: "guest",
-          label: "Guest / Friend",
-          icon: "👤",
-          message: "🔔 *Ding Dong!* A guest is waiting for you."
-        },
-        {
-          id: "urgent",
-          label: "Urgent",
-          icon: "🚨",
-          message: "🚨 *URGENT!* Someone needs immediate attention at the door."
-        }
+        { id: "delivery", icon: "🛵" },
+        { id: "guest", icon: "👤" },
+        { id: "urgent", icon: "🚨" }
       ],
       quietHours: {
         start: parseInt(env.QUIET_HOURS_START) || 22,
@@ -34,38 +134,29 @@ export default {
         timezoneOffset: parseInt(env.TIMEZONE_OFFSET) || 2
       }
     };
-    // --------------------------
 
-    const url = new URL(request.url);
-
-    // Handle Telegram Notification Request
     if (request.method === "POST" && url.pathname === "/notify") {
       return handleNotify(request, env, CONFIG);
     }
 
-    // Serve Frontend
     return serveFrontend(env, CONFIG);
   },
 };
 
-/**
- * Handle Notification Logic
- */
 async function handleNotify(request, env, CONFIG) {
   try {
-    const { type, token } = await request.json();
+    const { type, token, lang } = await request.json();
+    const t = translations[lang] || translations.en;
 
     // 1. Validate Turnstile Token
     if (env.TURNSTILE_SECRET) {
       const formData = new FormData();
       formData.append('secret', env.TURNSTILE_SECRET);
       formData.append('response', token);
-
       const result = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         body: formData,
         method: 'POST',
       });
-
       const outcome = await result.json();
       if (!outcome.success) {
         return new Response(JSON.stringify({ error: "Invalid bot protection token" }), { status: 403 });
@@ -76,23 +167,15 @@ async function handleNotify(request, env, CONFIG) {
     const now = new Date();
     const hour = (now.getUTCHours() + CONFIG.quietHours.timezoneOffset + 24) % 24;
     const { start, end } = CONFIG.quietHours;
-
-    const isQuiet = end > start 
-      ? (hour >= start && hour < end)
-      : (hour >= start || hour < end);
+    const isQuiet = end > start ? (hour >= start && hour < end) : (hour >= start || hour < end);
 
     if (isQuiet) {
-      return new Response(JSON.stringify({ message: "Shhh... Dori is sleeping. Notification suppressed." }), { status: 200 });
+      return new Response(JSON.stringify({ message: "Quiet hours active. Notification suppressed." }), { status: 200 });
     }
 
-    // 3. Find Button Config
-    const button = CONFIG.buttons.find(b => b.id === type);
-    if (!button) {
-      return new Response(JSON.stringify({ error: "Invalid notification type" }), { status: 400 });
-    }
-
-    // 4. Send Telegram Message
-    const message = `${button.message}\n\n_Time: ${now.toLocaleString()}_`;
+    // 3. Send Telegram Message
+    const msgKey = type + "Msg";
+    const message = (t[msgKey] || t.guestMsg) + `\n\n_Time: ${now.toLocaleString()}_`;
     
     const tgUrl = `https://api.telegram.org/bot${env.TG_BOT_TOKEN}/sendMessage`;
     const res = await fetch(tgUrl, {
@@ -116,35 +199,25 @@ async function handleNotify(request, env, CONFIG) {
   }
 }
 
-/**
- * Serve HTML/JS Frontend
- */
 function serveFrontend(env, CONFIG) {
-  const buttonsHtml = CONFIG.buttons.map(btn => `
-    <button id="btn-${btn.id}" class="btn" onclick="ring('${btn.id}')" disabled>
-        <span class="icon">${btn.icon}</span>
-        <span class="label">${btn.label}</span>
-    </button>
-  `).join('');
-
   const html = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${CONFIG.familyName} | Dori-Bell</title>
+    <title>${CONFIG.familyName} | Aura Bell</title>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         :root {
-            --primary: #f37021;
-            --bg: #121212;
-            --card: #1e1e1e;
-            --text: #ffffff;
-            --accent: #00c2e8;
+            --primary: #00c2e8;
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --accent: #38bdf8;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             display: flex;
@@ -157,21 +230,25 @@ function serveFrontend(env, CONFIG) {
         }
         .container {
             background: var(--card);
-            padding: 2.5rem 2rem;
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            padding: 3rem 2rem;
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
             text-align: center;
-            max-width: 420px;
+            max-width: 400px;
             width: 100%;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
         }
         .logo {
-            font-size: 4.5rem;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
         }
-        h1 { margin: 0 0 0.5rem 0; font-weight: 800; letter-spacing: -0.5px; }
-        p { color: #888; margin-bottom: 2.5rem; line-height: 1.5; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        h1 { margin: 0; font-size: 2rem; font-weight: 800; background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { color: #94a3b8; margin-bottom: 2rem; font-size: 1rem; }
+        .lang-selector { margin-bottom: 1.5rem; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+        .lang-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 4px 10px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; }
+        .lang-btn.active { background: var(--primary); border-color: var(--primary); }
         .btn {
             display: flex;
             align-items: center;
@@ -180,98 +257,149 @@ function serveFrontend(env, CONFIG) {
             padding: 1.2rem;
             margin: 12px 0;
             border: none;
-            border-radius: 16px;
+            border-radius: 20px;
             font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            background: rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.03);
             color: white;
             border: 1px solid rgba(255,255,255,0.1);
         }
-        .btn:active { transform: scale(0.97); }
-        .btn:hover:not(:disabled) {
-            background: rgba(255,255,255,0.1);
-            border-color: var(--accent);
-        }
-        .btn .icon { margin-right: 12px; font-size: 1.4rem; }
-        .btn:disabled { opacity: 0.4; cursor: not-allowed; }
-        
-        #status { 
-            margin-top: 1.5rem; 
-            font-size: 0.95rem; 
-            font-weight: 500;
-            min-height: 1.5em;
-        }
-        .cf-turnstile { margin: 25px 0; display: flex; justify-content: center; }
-        
-        .footer {
-            margin-top: 2rem;
-            font-size: 0.75rem;
-            color: #555;
-        }
+        .btn:hover:not(:disabled) { background: rgba(255,255,255,0.1); border-color: var(--accent); transform: translateY(-2px); }
+        .btn-call { background: linear-gradient(135deg, #0ea5e9, #2563eb); border: none; margin-top: 20px; }
+        .btn .icon { margin-right: 12px; font-size: 1.5rem; }
+        .btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        #status { margin-top: 1.5rem; font-weight: 500; min-height: 1.5em; }
+        .footer { margin-top: 2.5rem; font-size: 0.8rem; color: #475569; letter-spacing: 1px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">🛎️</div>
-        <h1>${CONFIG.familyName}</h1>
-        <p>Please solve the security check to ring the doorbell.</p>
+        <div class="logo">🔔</div>
+        <h1 id="ui-title">Aura Bell</h1>
+        <div class="subtitle" id="ui-subtitle">Smart Access System</div>
         
-        <div class="cf-turnstile" data-sitekey="${env.TURNSTILE_SITE_KEY || ''}"></div>
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" onclick="setLang('he')">HE</button>
+            <button class="lang-btn" onclick="setLang('ar')">AR</button>
+            <button class="lang-btn" onclick="setLang('ru')">RU</button>
+            <button class="lang-btn" onclick="setLang('fr')">FR</button>
+        </div>
+
+        <p id="ui-security">${translations.en.securityCheck}</p>
+        
+        <div class="cf-turnstile" data-sitekey="${env.TURNSTILE_SITE_KEY || ''}" data-callback="onTurnstileSuccess"></div>
 
         <div id="button-container">
-            ${buttonsHtml}
+            <button id="btn-delivery" class="btn" onclick="ring('delivery')" disabled>
+                <span class="icon">🛵</span> <span class="label" id="ui-delivery">Delivery</span>
+            </button>
+            <button id="btn-guest" class="btn" onclick="ring('guest')" disabled>
+                <span class="icon">👤</span> <span class="label" id="ui-guest">Guest</span>
+            </button>
+            <button id="btn-urgent" class="btn" onclick="ring('urgent')" disabled>
+                <span class="icon">🚨</span> <span class="label" id="ui-urgent">Urgent</span>
+            </button>
+            ${CONFIG.phone ? `
+            <button class="btn btn-call" onclick="window.location.href='tel:${CONFIG.phone}'">
+                <span class="icon">📞</span> <span id="ui-call">Call Host</span>
+            </button>` : ''}
         </div>
         
         <div id="status"></div>
-        
-        <div class="footer">Powered by Dori-Bell Serverless</div>
+        <div class="footer">AURA BELL &copy; 2026</div>
     </div>
 
     <script>
-        function checkTurnstile() {
-            const token = turnstile.getResponse();
-            if (token) {
-                document.querySelectorAll('.btn').forEach(b => b.disabled = false);
-            }
+        const translations = ${JSON.stringify(translations)};
+        let currentLang = 'en';
+
+        function setLang(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.getElementById('ui-title').innerText = t.title;
+            document.getElementById('ui-subtitle').innerText = t.subtitle;
+            document.getElementById('ui-security').innerText = t.securityCheck;
+            document.getElementById('ui-delivery').innerText = t.delivery;
+            document.getElementById('ui-guest').innerText = t.guest;
+            document.getElementById('ui-urgent').innerText = t.urgent;
+            if(document.getElementById('ui-call')) document.getElementById('ui-call').innerText = t.callHost;
+            
+            document.querySelectorAll('.lang-btn').forEach(b => {
+                b.classList.toggle('active', b.innerText.toLowerCase() === lang);
+            });
+            document.body.dir = lang === 'he' || lang === 'ar' ? 'rtl' : 'ltr';
         }
-        setInterval(checkTurnstile, 1000);
+
+        function onTurnstileSuccess() {
+            document.querySelectorAll('.btn').forEach(b => b.disabled = false);
+        }
 
         async function ring(type) {
             const status = document.getElementById('status');
             const token = turnstile.getResponse();
+            const t = translations[currentLang];
             
             if (!token) {
-                status.innerText = "⚠️ Please complete the security check.";
+                status.innerText = "⚠️ " + t.securityCheck;
                 return;
             }
 
-            status.innerHTML = "⏳ <span style='color: var(--accent)'>Ringing the bell...</span>";
+            status.innerHTML = "⏳ <span style='color: var(--accent)'>" + t.ringing + "</span>";
             
             try {
                 const res = await fetch('/notify', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ type, token })
+                    body: JSON.stringify({ type, token, lang: currentLang })
                 });
                 
                 const data = await res.json();
                 if (res.ok) {
-                    status.innerHTML = "✅ <span style='color: #4ade80'>Host notified! Please wait.</span>";
+                    status.innerHTML = "✅ <span style='color: #4ade80'>" + t.notified + "</span>";
                     document.querySelectorAll('.btn').forEach(b => b.disabled = true);
                 } else {
-                    status.innerHTML = "❌ <span style='color: #f87171'>Error: " + (data.message || data.error) + "</span>";
+                    status.innerHTML = "❌ <span style='color: #f87171'>" + t.error + (data.message || data.error) + "</span>";
                 }
             } catch (e) {
-                status.innerHTML = "❌ <span style='color: #f87171'>Connection failed.</span>";
+                status.innerHTML = "❌ <span style='color: #f87171'>" + t.connFailed + "</span>";
             }
         }
     </script>
 </body>
 </html>
   `;
-  return new Response(html, {
-    headers: { "Content-Type": "text/html;charset=UTF-8" },
-  });
+  return new Response(html, { headers: { "Content-Type": "text/html;charset=UTF-8" } });
+}
+
+function serveSetup(env) {
+    const html = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Aura Bell Setup</title>
+        <style>
+            body { font-family: sans-serif; background: #0f172a; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; }
+            .card { background: #1e293b; padding: 2rem; border-radius: 1rem; width: 100%; max-width: 400px; }
+            input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #334155; background: #0f172a; color: white; box-sizing: border-box; }
+            button { width: 100%; padding: 10px; background: #0ea5e9; border: none; color: white; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h2>🚀 Aura Bell Setup</h2>
+            <p>Enter your environment variables below:</p>
+            <input type="text" placeholder="Family Name (e.g. Cohen Family)" id="name">
+            <input type="text" placeholder="Telegram Bot Token" id="token">
+            <input type="text" placeholder="Telegram Chat ID" id="chatid">
+            <input type="text" placeholder="Phone Number (for direct calls)" id="phone">
+            <button onclick="alert('In a real deployment, these would be saved to your Cloudflare Worker environment!')">Save Configuration</button>
+            <p style="font-size: 0.8rem; color: #64748b; margin-top: 1rem;">Note: For security, variables must be set in your Wrangler/Cloudflare dashboard.</p>
+        </div>
+    </body>
+    </html>
+    `;
+    return new Response(html, { headers: { "Content-Type": "text/html;charset=UTF-8" } });
 }
