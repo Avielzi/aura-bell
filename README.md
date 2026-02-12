@@ -1,7 +1,7 @@
 # 🔔 Aura Bell / Dori-Bell Repository
 
 <p align="center">
-  <img src="upgraded/assets/logo.png" alt="Aura Bell Logo" width="200" />
+  <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663282152489/UNpfETksVmNMDxrQ.png" alt="Aura Bell Logo" width="200" />
 </p>
 
 <p align="center">

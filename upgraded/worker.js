@@ -239,9 +239,11 @@ function serveFrontend(env, CONFIG) {
             border: 1px solid rgba(255,255,255,0.1);
         }
         .logo {
-            font-size: 5rem;
-            margin-bottom: 1rem;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
             animation: pulse 2s infinite;
+            display: block;
         }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
         h1 { margin: 0; font-size: 2rem; font-weight: 800; background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -276,7 +278,7 @@ function serveFrontend(env, CONFIG) {
 </head>
 <body>
     <div class="container">
-        <div class="logo">🔔</div>
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663282152489/UNpfETksVmNMDxrQ.png" alt="Aura Bell Logo" class="logo">
         <h1 id="ui-title">Dori-Bell</h1>
         <div class="subtitle" id="ui-subtitle">Smart Access System</div>
         
