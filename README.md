@@ -1,5 +1,20 @@
 # 🔔 Aura Bell / Dori-Bell Repository
 
+<p align="center">
+  <img src="upgraded/assets/logo.png" alt="Aura Bell Logo" width="200" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-2.0-blue.svg" alt="Version" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License" />
+  <img src="https://img.shields.io/badge/Cloudflare-Workers-orange.svg?logo=cloudflare" alt="Cloudflare Workers" />
+  <img src="https://img.shields.io/badge/Telegram-Notifications-blue.svg?logo=telegram" alt="Telegram" />
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen.svg" alt="Status" />
+  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="PRs Welcome" />
+</p>
+
+---
+
 This repository contains two versions of the serverless smart doorbell system:
 
 ## 📂 Repository Structure
@@ -31,3 +46,9 @@ To get started, choose the version you want to deploy and follow the instruction
 | Direct Calling | ❌ | ✅ |
 | Setup UI / Script | ❌ | ✅ |
 | Professional Branding | ❌ | ✅ |
+
+---
+
+<p align="center">
+  Built with ❤️ for the Smart Home Community
+</p>
