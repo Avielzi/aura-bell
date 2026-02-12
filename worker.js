@@ -309,7 +309,7 @@ function serveFrontend(env, CONFIG) {
         </div>
         
         <div id="status"></div>
-        <div class="footer">DORI-BELL &copy; 2026</div>
+        <div class="footer">AURA BELL &copy; 2026</div>
     </div>
 
     <script>
