@@ -1,27 +1,29 @@
 # 🔔 Aura Bell v2.0: The Professional Smart Doorbell
 
-> **Aura Bell** is a serverless, multi-lingual, and secure smart doorbell system. It provides instant Telegram notifications, direct calling capabilities, and a sleek modern interface—all running for $0 on Cloudflare Workers.
+> **Aura Bell** is a professional-grade, serverless, multi-lingual, and secure smart doorbell system. It provides instant Telegram notifications, direct calling capabilities, and a sleek modern interface—all running for $0 on Cloudflare Workers.
 
 ---
 
 ## 🌍 Multi-lingual Support
 Aura Bell is designed for a global audience with full support for:
-- 🇮🇱 **Hebrew** (עברית)
-- 🇺🇸 **English**
-- 🇸🇦 **Arabic** (العربية)
+- 🇮🇱 **Hebrew** (עברית) - Full RTL support
+- 🇺🇸 **English** - Modern LTR interface
+- 🇸🇦 **Arabic** (العربية) - Full RTL support
 - 🇷🇺 **Russian** (Русский)
 - 🇫🇷 **French** (Français)
 
 ---
 
-## ✨ New in Version 2.0
+## ✨ Why Aura Bell? (Features)
 | Feature | Description |
 | :--- | :--- |
-| 📞 **Direct Call** | Guests can call the host directly from the browser with one tap. |
-| 🚀 **Auto-Setup Script** | New `setup.py` script to configure everything without touching code. |
+| 📞 **Direct Call** | Guests can call the host directly from the browser with one tap. No app required. |
+| 🚀 **Auto-Setup Script** | New `setup.py` script to configure your **smart home** doorbell without touching code. |
 | 🌍 **RTL/LTR Support** | Seamless switching between Right-to-Left and Left-to-Right languages. |
-| 🎨 **Premium UI** | Modern dark-mode design with smooth animations and a professional look. |
-| 🛡️ **Bot Protection** | Powered by Cloudflare Turnstile for maximum security. |
+| 🎨 **Premium UI** | Modern **dark-mode** design with smooth animations and a professional look. |
+| 🛡️ **Bot Protection** | Powered by **Cloudflare Turnstile** for maximum security and anti-spam. |
+| 💰 **$0 Monthly Cost** | 100% **free to run** on Cloudflare Workers' generous free tier. |
+| 📱 **Telegram Alerts** | Instant push notifications with custom icons and rich text formatting. |
 
 ---
 
@@ -64,4 +66,4 @@ Aura Bell is designed for a global audience with full support for:
 - [Roby's Simple Guide / המדריך של רובי](./GUIDE_FOR_ROBY.md)
 
 ---
-*Aura Bell - Elevating your home entrance experience.*
+*Aura Bell - The best serverless smart doorbell for home automation and security.*
