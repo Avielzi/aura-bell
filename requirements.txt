@@ -1,7 +1,7 @@
 aiogram==3.25.0
 groq
 huggingface-hub
-duckduckgo-search==7.0.0
+duckduckgo-search>=7.0.1
 aiosqlite
 python-dotenv
 Pillow
